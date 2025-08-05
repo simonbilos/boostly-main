@@ -6,10 +6,4 @@ import { Component } from "@angular/core";
   templateUrl: "./nav-menu.component.html",
   styleUrl: "./nav-menu.component.css",
 })
-export class NavMenuComponent {
-  warning: string = "Hey!";
-
-  warningConsole() {
-    console.log(this.warning);
-  }
-}
+export class NavMenuComponent {}
