@@ -1,1 +1,16 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label for="userEmail">Your email</label>
+  <input id="userEmail" type="text" formControlName="userEmail" required />
 
+  <label for="userText">Enter text</label>
+  <input
+    id="userText"
+    type="text"
+    formControlName="userText"
+    required
+    minlength="8"
+  />
+  <button type="submit">Submit</button>
+</form>
+
+<button (mouseover)="updateValue()">Here</button>
