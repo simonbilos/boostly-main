@@ -3,8 +3,10 @@ import {
   ReactiveFormsModule,
   FormControl,
   FormGroup,
-  Validators,
+  FormBuilder,
 } from "@angular/forms";
+
+import { inject } from "@angular/core";
 
 @Component({
   selector: "app-contact",
@@ -13,10 +15,20 @@ import {
   styleUrl: "./contact.component.css",
 })
 export class ContactComponent {
-  contactForm = new FormGroup({
-    userEmail: new FormControl("", Validators.required),
-    userText: new FormControl("", Validators.required),
+  private formBuilder = inject(FormBuilder);
+
+  contactForm = this.formBuilder.group({
+    userEmail: [""],
+    userText: this.formBuilder.group({
+      textObject: [""],
+      textContent: [""],
+    }),
   });
+
+  // contactForm = new FormGroup({
+  //   userEmail: new FormControl(""),
+  //   userText: new FormControl(""),
+  // });
 
   onSubmit() {
     console.warn(this.contactForm.value);
@@ -25,7 +37,10 @@ export class ContactComponent {
   updateValue() {
     this.contactForm.patchValue({
       userEmail: "kirbis@gmail.com",
-      userText: "Dari sa",
+      userText: {
+        textObject: "pomoc s dizajnom",
+        textContent: "ahoj, potrebujem helfnut",
+      },
     });
   }
 }

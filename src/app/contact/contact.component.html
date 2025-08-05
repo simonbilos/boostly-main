@@ -1,16 +1,25 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <label for="userEmail">Your email</label>
-  <input id="userEmail" type="text" formControlName="userEmail" required />
+  <input id="userEmail" type="text" formControlName="userEmail" />
 
+  <div formGroupName="userText">
+    <label for="textObject">Text object:</label>
+    <input id="textObject" type="text" formControlName="textObject" />
+
+    <label for="textContent">Text Content</label>
+    <input id="textContent" type="text" formControlName="textContent" />
+  </div>
+  <!-- 
+
+  This is other way how I can do Forms, but FormBuilder is better for bigger groups :)
+  
   <label for="userText">Enter text</label>
   <input
     id="userText"
     type="text"
     formControlName="userText"
-    required
-    minlength="8"
-  />
+  /> -->
   <button type="submit">Submit</button>
 </form>
 
-<button (mouseover)="updateValue()">Here</button>
+<button (mouseover)="updateValue()">Hover</button>
