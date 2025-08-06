@@ -1,14 +1,43 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <label for="userEmail">Your email</label>
-  <input id="userEmail" type="text" formControlName="userEmail" />
-
-  <div formGroupName="userText">
-    <label for="textObject">Text object:</label>
-    <input id="textObject" type="text" formControlName="textObject" />
-
-    <label for="textContent">Text Content</label>
-    <input id="textContent" type="text" formControlName="textContent" />
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+  <div formGroupName="userName" class="name-form">
+    <input
+      id="firstName"
+      type="text"
+      formControlName="firstName"
+      placeholder="Krstné meno"
+      class="name"
+    />
+    <input
+      id="lastName"
+      type="text"
+      formControlName="lastName"
+      placeholder="Priezvisko"
+      class="name"
+    />
   </div>
+
+  <input
+    id="userEmail"
+    type="text"
+    formControlName="userEmail"
+    placeholder="Vaša emailová adresa"
+    class="email"
+  />
+  <input
+    id="userPhone"
+    type="text"
+    formControlName="userPhone"
+    placeholder="Vaše telefónne číslo"
+    class="phone"
+  />
+  <input
+    id="messageContent"
+    type="text"
+    formControlName="messageContent"
+    placeholder="Správa"
+    class="message"
+  />
+
   <!-- 
 
   This is other way how I can do Forms, but FormBuilder is better for bigger groups :)
@@ -21,5 +50,3 @@
   /> -->
   <button type="submit">Submit</button>
 </form>
-
-<button (mouseover)="updateValue()">Hover</button>

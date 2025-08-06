@@ -1,0 +1,46 @@
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  gap: 16px; /* Increased gap for more space between rows */
+  width: 100%;
+  max-width: 374px;
+  margin: 0 auto; /* Center the form */
+}
+
+.name-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.name,
+.email,
+.phone {
+  width: 100%;
+  height: 64px;
+  border-radius: 20px;
+  background: #fff;
+  text-align: start;
+  font-size: 1.2rem;
+  padding: 16px 24px;
+  border: 2px solid #888;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.message {
+  width: 100%;
+  height: 64px;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 1.2rem;
+  padding: 16px 24px;
+  border: 2px solid #888;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  height: 220px; /* Taller for textarea */
+  resize: none;
+  padding: 24px;
+}

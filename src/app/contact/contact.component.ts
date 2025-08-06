@@ -18,11 +18,13 @@ export class ContactComponent {
   private formBuilder = inject(FormBuilder);
 
   contactForm = this.formBuilder.group({
-    userEmail: [""],
-    userText: this.formBuilder.group({
-      textObject: [""],
-      textContent: [""],
+    userName: this.formBuilder.group({
+      firstName: [""],
+      lastName: [""],
     }),
+    userEmail: [""],
+    userPhone: [""],
+    messageContent: [""],
   });
 
   // contactForm = new FormGroup({
@@ -34,13 +36,13 @@ export class ContactComponent {
     console.warn(this.contactForm.value);
   }
 
-  updateValue() {
-    this.contactForm.patchValue({
-      userEmail: "kirbis@gmail.com",
-      userText: {
-        textObject: "pomoc s dizajnom",
-        textContent: "ahoj, potrebujem helfnut",
-      },
-    });
-  }
+  // updateValue() {
+  //   this.contactForm.patchValue({
+  //     userEmail: "kirbis@gmail.com",
+  //     userText: {
+  //       textObject: "pomoc s dizajnom",
+  //       textContent: "ahoj, potrebujem helfnut",
+  //     },
+  //   });
+  // }
 }
