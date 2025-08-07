@@ -21,8 +21,13 @@
     type="text"
     formControlName="userEmail"
     placeholder="Vaša emailová adresa"
+    [class.email-wrong]="
+      contactForm.get('userEmail')?.touched &&
+      contactForm.get('userEmail')?.invalid
+    "
     class="email"
   />
+
   <input
     id="userPhone"
     type="text"

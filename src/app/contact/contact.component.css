@@ -16,6 +16,7 @@
 
 .name,
 .email,
+.email-wrong,
 .phone {
   width: 100%;
   height: 64px;
@@ -43,4 +44,8 @@
   height: 220px; /* Taller for textarea */
   resize: none;
   padding: 24px;
+}
+
+.email-wrong {
+  border: 2px solid #f96060;
 }

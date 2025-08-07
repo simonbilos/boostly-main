@@ -4,6 +4,7 @@ import {
   FormControl,
   FormGroup,
   FormBuilder,
+  Validators,
 } from "@angular/forms";
 
 import { inject } from "@angular/core";
@@ -22,7 +23,7 @@ export class ContactComponent {
       firstName: [""],
       lastName: [""],
     }),
-    userEmail: [""],
+    userEmail: ["", [Validators.required, Validators.email]],
     userPhone: [""],
     messageContent: [""],
   });
@@ -45,4 +46,8 @@ export class ContactComponent {
   //     },
   //   });
   // }
+
+  errorMessage(data: string) {
+    console.log(`${data} is not valid`);
+  }
 }
