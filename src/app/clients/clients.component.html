@@ -2,7 +2,26 @@
   <div class="clients-inner">
     <h2>Klienti</h2>
     <div class="clients-cards">
-      <div class="client-card left">
+      <button
+        class="arrow mobile-only"
+        (click)="prevCard()"
+        [disabled]="currentIndex() === 0"
+      >
+        &#8592;
+      </button>
+      @for (card of cards(); track card.id; let i = $index) { @if (i ==
+      currentIndex()) {
+      <div class="client-card">{{ card.content }}</div>
+      } }
+      <button
+        class="arrow mobile-only"
+        (click)="nextCard()"
+        [disabled]="currentIndex() === this.cards().length - 1"
+      >
+        &#8594;
+      </button>
+
+      <!-- <div class="client-card left">
         tu by mohli byt videjka o vasich klientov, co ste urobili uz. Popripade
         po kliknuti sa otvori vas instagram /klient/ kontaktatny formular. Pri
         scrollnuti by krajné mohli ist dole a stredne vyssie aby boli v rovnakej
@@ -13,7 +32,7 @@
       </div>
       <div class="client-card right">
         tu by mohli byt videjka o vasich klientov, co ste urobili uz
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

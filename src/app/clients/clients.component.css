@@ -42,16 +42,65 @@
   align-items: flex-start;
 }
 
+.client-card.active {
+  display: flex;
+  opacity: 1;
+  z-index: 2;
+}
+.client-card.inactive {
+  opacity: 0;
+  z-index: 1;
+}
+.arrow {
+  background: #fff;
+  border: 1px solid #a3a3ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 8px;
+  z-index: 3;
+  transition: background 0.2s;
+}
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 @media (max-width: 900px) {
+  .mobile-only {
+    display: flex;
+  }
   .clients-cards {
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    gap: 0;
   }
-  .client-card.left,
-  .client-card.right {
+  .client-card {
     display: none;
+    width: 90vw;
+    max-width: 340px;
+    height: 440px;
+    margin: 0 12px;
   }
-  .client-card.middle {
-    margin: 0 auto;
+  .client-card {
+    /* Only the active card will be shown via the template logic */
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-only {
+    display: none !important;
+  }
+  .client-card {
+    display: flex !important;
+    width: 252px;
+    height: 440px;
+    margin: 0 12px;
   }
 }
