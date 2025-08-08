@@ -1,6 +1,6 @@
 .clients-bg {
   width: 100vw;
-  min-height: 200vh;
+  min-height: 100vh;
   background: linear-gradient(90deg, #0a0a1a 0%, #2e2eb7 100%);
   margin: 0 auto;
   overflow-x: hidden;
@@ -26,40 +26,46 @@
   height: 540;
 }
 
-.client-card.active {
+.client-cards-wrapper {
   display: flex;
-  opacity: 1;
-  z-index: 2;
+  flex-direction: column;
+  align-items: center;
 }
-.client-card.inactive {
-  opacity: 0;
-  z-index: 1;
-}
+
 .arrow {
-  background: #fff;
-  border: 1px solid #a3a3ff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff;
+  border: 1.5px solid #a3a3ff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 0;
   cursor: pointer;
   margin: 0 8px;
   z-index: 3;
-  transition: background 0.2s;
+  user-select: none;
 }
 .arrow:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
+.arrows-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
 .mobile-only {
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .mobile-only {
     display: flex;
   }
@@ -68,27 +74,16 @@
     align-items: center;
     justify-content: center;
   }
-  .client-card {
-    display: none;
-    width: 90vw;
-    max-width: 340px;
-    height: 440px;
-    margin: 0 12px;
-  }
-  .client-card {
-    /* Only the active card will be shown via the template logic */
-    display: flex;
-  }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .mobile-only {
     display: none !important;
   }
-  .client-card {
-    display: flex !important;
-    width: 252px;
-    height: 440px;
-    margin: 0 12px;
+  .clients-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
   }
 }

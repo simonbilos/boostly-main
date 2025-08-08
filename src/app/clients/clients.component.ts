@@ -1,4 +1,10 @@
-import { Component, computed, signal } from "@angular/core";
+import {
+  Component,
+  computed,
+  signal,
+  ChangeDetectionStrategy,
+  HostListener,
+} from "@angular/core";
 import { ClientCardComponent } from "../client-card/client-card.component";
 
 @Component({
@@ -6,6 +12,7 @@ import { ClientCardComponent } from "../client-card/client-card.component";
   imports: [ClientCardComponent],
   templateUrl: "./clients.component.html",
   styleUrl: "./clients.component.css",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ClientsComponent {
   private _cards = signal([
@@ -15,9 +22,16 @@ export class ClientsComponent {
   ]);
 
   private _currentIndex = signal<number>(0);
+  private _isMobile = signal(window.innerWidth < 1200);
 
   currentIndex = computed(() => this._currentIndex());
   cards = computed(() => this._cards());
+  isMobile = computed(() => this._isMobile());
+
+  @HostListener("window:resize")
+  onResize() {
+    this._isMobile.set(window.innerWidth < 1200);
+  }
 
   prevCard() {
     this._currentIndex.update((i) =>

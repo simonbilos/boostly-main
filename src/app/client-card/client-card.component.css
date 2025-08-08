@@ -23,3 +23,25 @@
   opacity: 0;
   z-index: 1;
 }
+
+@media (max-width: 1200px) {
+  .client-card {
+    display: none;
+    width: 212px;
+    height: 400px;
+    margin: 0 12px;
+  }
+  .client-card {
+    /* Only the active card will be shown via the template logic */
+    display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .client-card {
+    display: flex !important;
+    width: 252px;
+    height: 440px;
+    margin: 0 12px;
+  }
+}
