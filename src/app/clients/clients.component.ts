@@ -1,8 +1,9 @@
 import { Component, computed, signal } from "@angular/core";
+import { ClientCardComponent } from "../client-card/client-card.component";
 
 @Component({
   selector: "app-clients",
-  imports: [],
+  imports: [ClientCardComponent],
   templateUrl: "./clients.component.html",
   styleUrl: "./clients.component.css",
 })

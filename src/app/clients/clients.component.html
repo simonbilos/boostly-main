@@ -11,7 +11,7 @@
       </button>
       @for (card of cards(); track card.id; let i = $index) { @if (i ==
       currentIndex()) {
-      <div class="client-card">{{ card.content }}</div>
+      <app-client-card [content]="card.content"></app-client-card>
       } }
       <button
         class="arrow mobile-only"
