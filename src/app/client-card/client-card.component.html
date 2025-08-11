@@ -1,1 +1,9 @@
-<div class="client-card">{{ content() }}</div>
+<div class="client-card">
+  <video
+    autoplay
+    muted
+    loop
+    [src]="content()"
+    style="width: 100%; height: 100%; object-fit: cover"
+  ></video>
+</div>
