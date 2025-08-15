@@ -1,1 +1,32 @@
-<p>clients works!</p>
+<div class="clients-bg">
+  <div class="clients-inner">
+    <h2>Klienti</h2>
+    <div class="clients-cards">
+      @if (isMobile()) {
+      <div class="client-cards-wrapper">
+        @for (card of cards(); track card.id; let i = $index) { @if (i ==
+        currentIndex()) {
+        <app-client-card [content]="card.content"></app-client-card>
+        } }
+        <div class="arrows-row">
+          <button
+            class="arrow mobile-only"
+            (click)="prevCard()"
+            [disabled]="currentIndex() === 0"
+          >
+            &#8592;
+          </button>
+          <button
+            class="arrow mobile-only"
+            (click)="nextCard()"
+            [disabled]="currentIndex() === this.cards().length - 1"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
+      } @else { @for (card of cards(); track card.id) {
+      <app-client-card [content]="card.content"></app-client-card>}}
+    </div>
+  </div>
+</div>

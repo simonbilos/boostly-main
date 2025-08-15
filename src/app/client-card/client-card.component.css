@@ -1,0 +1,43 @@
+.client-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.client-card.active {
+  display: flex;
+  opacity: 1;
+  z-index: 2;
+}
+.client-card.inactive {
+  opacity: 0;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .client-card {
+    display: none;
+    width: 212px;
+    height: 400px;
+    margin: 0 12px;
+  }
+  .client-card {
+    /* Only the active card will be shown via the template logic */
+    display: flex;
+  }
+}
+
+@media (min-width: 1000px) {
+  .client-card {
+    display: flex !important;
+    width: 252px;
+    height: 440px;
+    margin: 0 12px;
+  }
+}
