@@ -1,0 +1,32 @@
+img {
+  width: 364px;
+  height: 455px;
+}
+
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  justify-items: center;
+  align-items: center;
+  max-width: calc(2 * 364px + 32px); /* 2 images + 1 gap */
+  margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .image-section {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 364px;
+  }
+}
+
+@media (max-width: 1000px) {
+  img {
+    width: 292px;
+    height: 364px;
+  }
+
+  .image-section {
+    max-width: calc(2 * 292px + 32px);
+  }
+}
