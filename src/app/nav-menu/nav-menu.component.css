@@ -1,16 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
+
 .header {
   background-color: #08081f;
   height: 10vh;
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.header-menu {
+  height: 10vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100px;
-  height: 64%;
+  height: 5vh;
   margin-right: 32px;
+  margin-left: 12px;
   background: linear-gradient(
     to left,
     rgba(52, 49, 200, 1) 0%,
@@ -22,12 +37,51 @@
   border: 1px solid #fff;
   border-radius: 12px;
   overflow: hidden;
-  text-align: center;
-  justify-content: center;
   color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
 }
 
 .contact-button:hover {
   color: #08081f;
   background: #fff;
+  cursor: pointer;
+}
+
+.image-boostly {
+  height: 54%;
+  margin-left: 32px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 64%;
+  margin-right: 0px;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  margin-right: 12px;
+  margin-left: 12px;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  font-weight: 800;
+  font-size: large;
+  cursor: pointer;
+}
+
+.menu-sec-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-vertical {
+  border-left: 2px solid #ffffff;
+  height: 24px;
 }
