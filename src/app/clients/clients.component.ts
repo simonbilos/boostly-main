@@ -22,7 +22,7 @@ export class ClientsComponent {
   ]);
 
   private _currentIndex = signal<number>(0);
-  private _isMobile = signal(window.innerWidth < 1000);
+  private _isMobile = signal(window.innerWidth < 800);
 
   currentIndex = computed(() => this._currentIndex());
   cards = computed(() => this._cards());
@@ -30,7 +30,7 @@ export class ClientsComponent {
 
   @HostListener("window:resize")
   onResize() {
-    this._isMobile.set(window.innerWidth < 1000);
+    this._isMobile.set(window.innerWidth < 800);
   }
 
   prevCard() {

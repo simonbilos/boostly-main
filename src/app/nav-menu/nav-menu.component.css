@@ -111,9 +111,10 @@
 }
 
 /* Responsive styles */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
   .header {
-    position: relative; /* Ensure header is positioned for absolute menu */
+    position: sticky;
+    top: 0;
     z-index: 1001;
   }
   .header-menu {
