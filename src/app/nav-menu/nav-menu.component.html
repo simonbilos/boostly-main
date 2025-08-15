@@ -1,0 +1,21 @@
+<nav class="header">
+  <img src="/assets/images/boostly.png" alt="image" class="image-boostly" />
+
+  <div class="hamburger" (click)="toggleMenu()" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="header-menu" [class.open]="menuOpen">
+    <div class="menu-sec-items">
+      <div class="menu-item">Klienti</div>
+      <div class="white-vertical"></div>
+      <div class="menu-item">Služby</div>
+      <div class="white-vertical"></div>
+      <div class="menu-item">Spolupráca</div>
+      <div class="white-vertical"></div>
+    </div>
+    <div class="contact-button">Kontakt</div>
+  </div>
+</nav>
