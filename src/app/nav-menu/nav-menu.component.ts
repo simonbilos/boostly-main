@@ -6,4 +6,10 @@ import { Component } from "@angular/core";
   templateUrl: "./nav-menu.component.html",
   styleUrl: "./nav-menu.component.css",
 })
-export class NavMenuComponent {}
+export class NavMenuComponent {
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+}
