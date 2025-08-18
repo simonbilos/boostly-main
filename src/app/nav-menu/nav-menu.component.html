@@ -9,13 +9,39 @@
 
   <div class="header-menu" [class.open]="menuOpen">
     <div class="menu-sec-items">
-      <div class="menu-item">Klienti</div>
+      <div href="#clients" (click)="scrollDiv('clients')" class="menu-item">
+        Klienti
+      </div>
       <div class="white-vertical"></div>
-      <div class="menu-item">Služby</div>
+      <div href="#contact" (click)="scrollDiv('contact')" class="menu-item">
+        Služby
+      </div>
+
       <div class="white-vertical"></div>
-      <div class="menu-item">Spolupráca</div>
+      <div
+        href="#our-services"
+        (click)="scrollDiv('services')"
+        class="menu-item"
+      >
+        Služby
+      </div>
+      <div class="white-vertical"></div>
+      <div
+        href="#partnership"
+        (click)="scrollDiv('partnership')"
+        class="menu-item"
+      >
+        Spolupráca
+      </div>
       <div class="white-vertical"></div>
     </div>
-    <div class="contact-button">Kontakt</div>
+    <div
+      a
+      href="#contact"
+      (click)="scrollDiv('contact')"
+      class="contact-button"
+    >
+      Kontakt
+    </div>
   </div>
 </nav>

@@ -12,4 +12,9 @@ export class NavMenuComponent {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+
+  scrollDiv(divName: string) {
+    let elem = document.getElementById(divName);
+    elem?.scrollIntoView();
+  }
 }

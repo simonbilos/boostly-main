@@ -4,3 +4,7 @@
 body {
   font-family: "Montserrat", Arial, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
