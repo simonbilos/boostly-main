@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap");
 
+a {
+  text-decoration: none;
+}
+
 .header {
   background-color: #08081f;
   height: 10vh;
@@ -9,6 +13,26 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 1001;
+}
+
+.header-scrolled {
+  background-color: #08081f;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s, box-shadow 0.3s;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+}
+
+.header-scrolled .image-boostly {
+  height: 40%;
+  transition: height 0.3s;
+  margin-left: 0px;
+}
+
+.header-scrolled .image-boostly:hover {
+  cursor: pointer;
 }
 
 .header-menu {
@@ -88,7 +112,6 @@
   height: 24px;
 }
 
-/* Hamburger icon styles */
 .hamburger {
   display: none;
   flex-direction: column;

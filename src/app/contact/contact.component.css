@@ -1,3 +1,9 @@
+.contact-body-outer {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
 .contact-body {
   display: flex;
   flex-direction: row;

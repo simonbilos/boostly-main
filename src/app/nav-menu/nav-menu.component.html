@@ -1,4 +1,9 @@
-<nav class="header">
+<nav
+  class="header"
+  [class.header-scrolled]="scrolled()"
+  (click)="scrollTop()"
+  id="nav-menu"
+>
   <img src="/assets/images/boostly.png" alt="image" class="image-boostly" />
 
   <div class="hamburger" (click)="toggleMenu()" tabindex="0">
@@ -7,41 +12,35 @@
     <span></span>
   </div>
 
-  <div class="header-menu" [class.open]="menuOpen">
+  @if (!scrolled() && menuOpen()) {
+  <div class="header-menu open">
     <div class="menu-sec-items">
-      <div href="#clients" (click)="scrollDiv('clients')" class="menu-item">
-        Klienti
-      </div>
-      <div class="white-vertical"></div>
-      <div href="#contact" (click)="scrollDiv('contact')" class="menu-item">
-        Služby
-      </div>
-
-      <div class="white-vertical"></div>
-      <div
-        href="#our-services"
-        (click)="scrollDiv('services')"
-        class="menu-item"
+      @for (elem of eachComponent(); track elem) {
+      <a
+        href="{{ elem.link }}"
+        (click)="scrollDiv(elem.id)"
+        class="{{ elem.class }}"
       >
-        Služby
-      </div>
+        {{ elem.content }}
+      </a>
       <div class="white-vertical"></div>
-      <div
-        href="#partnership"
-        (click)="scrollDiv('partnership')"
-        class="menu-item"
-      >
-        Spolupráca
-      </div>
-      <div class="white-vertical"></div>
-    </div>
-    <div
-      a
-      href="#contact"
-      (click)="scrollDiv('contact')"
-      class="contact-button"
-    >
-      Kontakt
+      }
     </div>
   </div>
+  } @else if (!scrolled()) {
+  <div class="header-menu">
+    <div class="menu-sec-items">
+      @for (elem of eachComponent(); track elem) {
+      <a
+        href="{{ elem.link }}"
+        (click)="scrollDiv(elem.id)"
+        class="{{ elem.class }}"
+      >
+        {{ elem.content }}
+      </a>
+      <div class="white-vertical"></div>
+      }
+    </div>
+  </div>
+  }
 </nav>

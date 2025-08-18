@@ -1,69 +1,71 @@
-<div class="contact-body" id="contact">
-  <div class="contact-form">
-    <p class="text-style">Napíšte nám</p>
-    <form
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-      class="contact-form-sub"
-    >
-      <div formGroupName="userName" class="name-form">
+<div class="contact-body-outer">
+  <div class="contact-body" id="contact">
+    <div class="contact-form">
+      <p class="text-style">Napíšte nám</p>
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="contact-form-sub"
+      >
+        <div formGroupName="userName" class="name-form">
+          <input
+            id="firstName"
+            type="text"
+            formControlName="firstName"
+            placeholder="Krstné meno"
+            class="name"
+          />
+          <input
+            id="lastName"
+            type="text"
+            formControlName="lastName"
+            placeholder="Priezvisko"
+            class="name"
+          />
+        </div>
         <input
-          id="firstName"
+          id="userEmail"
           type="text"
-          formControlName="firstName"
-          placeholder="Krstné meno"
-          class="name"
+          formControlName="userEmail"
+          placeholder="Vaša emailová adresa"
+          [class.email-wrong]="
+            contactForm.get('userEmail')?.touched &&
+            contactForm.get('userEmail')?.invalid
+          "
+          class="email"
         />
         <input
-          id="lastName"
+          id="userPhone"
           type="text"
-          formControlName="lastName"
-          placeholder="Priezvisko"
-          class="name"
+          formControlName="userPhone"
+          placeholder="Vaše telefónne číslo"
+          class="phone"
         />
-      </div>
-      <input
-        id="userEmail"
-        type="text"
-        formControlName="userEmail"
-        placeholder="Vaša emailová adresa"
-        [class.email-wrong]="
-          contactForm.get('userEmail')?.touched &&
-          contactForm.get('userEmail')?.invalid
-        "
-        class="email"
-      />
-      <input
-        id="userPhone"
-        type="text"
-        formControlName="userPhone"
-        placeholder="Vaše telefónne číslo"
-        class="phone"
-      />
-      <input
-        id="messageContent"
-        type="text"
-        formControlName="messageContent"
-        placeholder="Správa"
-        class="message"
-      />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  <div class="contact-info">
-    <p
-      class="text-style"
-      style="padding-left: 0; margin: 44.8px auto 10px auto"
-    >
-      Kontaktujte nás
-    </p>
-    <div class="info-row">
-      <span class="icon email-icon"></span>
-      <span class="info-box">team.boostlygmail.com</span>
+        <input
+          id="messageContent"
+          type="text"
+          formControlName="messageContent"
+          placeholder="Správa"
+          class="message"
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
-    <div class="info-row">
-      <span class="icon phone-icon"></span>
-      <span class="info-box">+421 908 236 392</span>
+    <div class="contact-info">
+      <p
+        class="text-style"
+        style="padding-left: 0; margin: 44.8px auto 10px auto"
+      >
+        Kontaktujte nás
+      </p>
+      <div class="info-row">
+        <span class="icon email-icon"></span>
+        <span class="info-box">team.boostlygmail.com</span>
+      </div>
+      <div class="info-row">
+        <span class="icon phone-icon"></span>
+        <span class="info-box">+421 908 236 392</span>
+      </div>
     </div>
   </div>
 </div>

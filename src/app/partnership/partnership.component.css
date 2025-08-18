@@ -1,3 +1,9 @@
+.image-section-wrapper {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
 img {
   width: 364px;
   height: 455px;
